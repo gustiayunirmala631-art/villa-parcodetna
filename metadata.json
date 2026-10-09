@@ -1,0 +1,8 @@
+{
+  "name": "Remix Villa Parcodetna Yogyakarta",
+  "description": "Website resmi Villa Parcodetna di Yogyakarta. Villa private pool tropis dengan reservasi instan Agoda, booking WhatsApp langsung (+62 822-3456-2202), galeri foto dan peta lokasi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
