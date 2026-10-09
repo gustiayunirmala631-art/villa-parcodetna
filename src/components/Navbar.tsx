@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ExternalLink, MessageCircle, Download } from 'lucide-react';
+import { Menu, X, ExternalLink, MessageCircle } from 'lucide-react';
 import { VILLA_INFO } from '../data/villaData';
 
 interface NavbarProps {
@@ -96,17 +96,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, setCurrency, lang, set
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
 
-            {/* Direct Download ZIP Button */}
-            <a
-              href="/villa-parcodetna.zip"
-              download="villa-parcodetna.zip"
-              className="px-3 py-2 text-xs tracking-wider uppercase font-medium text-stone-200 hover:text-white bg-stone-800/80 hover:bg-stone-700/80 border border-stone-700 transition-all rounded shadow-sm flex items-center gap-1.5 whitespace-nowrap shrink-0"
-              title="Unduh Source Code (.ZIP)"
-            >
-              <Download className="w-3.5 h-3.5 text-[#E8D7BE]" />
-              <span className="hidden xl:inline">{lang === 'ID' ? 'Unduh ZIP' : 'Download ZIP'}</span>
-            </a>
-
             {/* Direct WhatsApp Callout */}
             <a
               href={`https://wa.me/${VILLA_INFO.phoneRaw}?text=${encodeURIComponent(
@@ -196,14 +185,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, setCurrency, lang, set
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp: {VILLA_INFO.phoneDisplay}</span>
-            </a>
-            <a
-              href="/villa-parcodetna.zip"
-              download="villa-parcodetna.zip"
-              className="w-full py-2.5 px-4 text-center text-xs tracking-wider uppercase font-medium text-stone-300 bg-stone-800 hover:bg-stone-700 rounded flex items-center justify-center gap-2 border border-stone-700"
-            >
-              <Download className="w-4 h-4 text-[#E8D7BE]" />
-              <span>{lang === 'ID' ? 'Unduh Proyek (.ZIP)' : 'Download Project (.ZIP)'}</span>
             </a>
           </div>
         </div>

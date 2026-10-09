@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, MessageCircle, MapPin, Mail, Instagram, ShieldCheck, Download } from 'lucide-react';
+import { ExternalLink, MessageCircle, MapPin, Mail, Instagram, ShieldCheck } from 'lucide-react';
 import { VILLA_INFO } from '../data/villaData';
 
 interface FooterProps {
@@ -99,16 +99,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
               >
                 <span>Halaman Pemesanan Agoda</span>
                 <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href="/villa-parcodetna.zip"
-                download="villa-parcodetna.zip"
-                className="w-full py-2 px-4 rounded-lg bg-stone-900 hover:bg-stone-850 border border-stone-700/80 hover:border-[#E8D7BE]/50 text-stone-300 hover:text-white font-medium text-xs tracking-wider transition-colors flex items-center justify-center gap-2 text-center"
-                title="Download Source Code ZIP"
-              >
-                <Download className="w-3.5 h-3.5 text-[#E8D7BE]" />
-                <span>{lang === 'ID' ? 'Unduh Source Code (.ZIP)' : 'Download Source Code (.ZIP)'}</span>
               </a>
             </div>
           </div>
