@@ -68,7 +68,7 @@ export const VILLA_SINGLE_UNIT: VillaUnit = {
   id: "parco-entire-villa",
   name: "Villa Parcodetna (Entire 3-Bedroom Private Pool Villa)",
   tagline: "Villa Privat Utuh Eksklusif dengan Kolam Renang & 3 Kamar Tidur",
-  description: "Seluruh bangunan villa privat disewakan khusus untuk rombongan Anda (tanpa tamu lain). Dilengkapi 3 kamar tidur queen, 2 sofa bed, kolam renang pribadi berair jernih, ruang keluarga luas ber-AC dengan smart TV, dapur modern lengkap, balkon pemandangan asri, serta garasi mobil luas.",
+  description: "Seluruh bangunan villa privat disewakan khusus untuk rombongan Anda (tanpa tamu lain). Dilengkapi 3 kamar tidur queen, kolam renang pribadi berair jernih, ruang keluarga luas ber-AC dengan smart TV, dapur modern lengkap, balkon pemandangan asri, serta garasi mobil luas.",
   bedrooms: 3,
   bathrooms: 3,
   maxGuests: 8,
@@ -90,7 +90,7 @@ export const VILLA_SINGLE_UNIT: VillaUnit = {
   features: [
     "Satu Villa Utuh 100% Privat untuk Rombongan Anda",
     "Kolam Renang Privat Bersih & Terpelihara",
-    "3 Kamar Tidur Queen Bed + 2 Sofa Bed (Hingga 8 Tamu)",
+    "3 Kamar Tidur Queen Bed (Kapasitas Hingga 8 Tamu)",
     "Ruang Keluarga Luas Ber-AC dengan TV Kabel/Smart TV",
     "Dapur Lengkap dengan Kompor, Wajan, & Perlengkapan Makan",
     "3 Kamar Mandi Bersih dengan Air Hangat (Water Heater)",
@@ -188,7 +188,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "agoda-5",
-    title: "Kamar Tidur Tamu 2 & Sofa Bed",
+    title: "Kamar Tidur Tamu 2",
     category: "bedroom",
     categoryLabel: "Kamar Tidur",
     imageUrl: AGODA_PHOTOS.bedroomGuest2,
@@ -353,7 +353,7 @@ export const VILLA_AMENITIES: Amenity[] = [
   {
     id: "am-3",
     title: "3 Kamar Tidur Queen Ber-AC",
-    description: "Kamar tidur berpendingin ruangan dengan kasur queen size nyaman, ranjang sofa tambahan, dan linen bersih.",
+    description: "Kamar tidur berpendingin ruangan dengan kasur queen size nyaman dan linen bersih.",
     iconName: "BedDouble",
     highlight: true,
   },
@@ -487,7 +487,7 @@ export const FAQS = [
   },
   {
     question: "Berapa kapasitas tamu maksimal di Villa Parcodetna?",
-    answer: "Villa ini memiliki 3 kamar tidur dengan ranjang queen size serta 2 sofa bed tambahan di ruang santai, sehingga nyaman ditempati hingga 6–8 orang tamu.",
+    answer: "Villa ini memiliki 3 kamar tidur luas dengan ranjang queen size yang nyaman, sehingga sangat pas ditempati keluarga dan rombongan hingga 6–8 orang tamu.",
   },
   {
     question: "Apakah tersedia fasilitas dapur dan peralatan masak?",

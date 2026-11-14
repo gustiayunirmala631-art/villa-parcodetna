@@ -110,7 +110,7 @@ export const VillaSuites: React.FC<VillaSuitesProps> = ({ lang, currency }) => {
                 <div className="space-y-1 p-2 rounded-lg bg-stone-50/80 sm:bg-transparent">
                   <BedDouble className="w-4 h-4 mx-auto text-stone-600" />
                   <div className="text-[11px] text-stone-500 font-medium">Kamar Tidur</div>
-                  <div className="text-xs font-semibold text-stone-900">3 Queen Beds + 2 Sofa Beds</div>
+                  <div className="text-xs font-semibold text-stone-900">3 Queen Beds</div>
                 </div>
                 <div className="space-y-1 p-2 rounded-lg bg-stone-50/80 sm:bg-transparent">
                   <Bath className="w-4 h-4 mx-auto text-stone-600" />
