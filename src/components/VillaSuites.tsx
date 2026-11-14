@@ -106,23 +106,23 @@ export const VillaSuites: React.FC<VillaSuitesProps> = ({ lang, currency }) => {
               </div>
 
               {/* Specs Bar */}
-              <div className="grid grid-cols-4 gap-2 pt-6 mt-6 border-t border-stone-200/80 text-center">
-                <div className="space-y-1">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-2 pt-6 mt-6 border-t border-stone-200/80 text-center">
+                <div className="space-y-1 p-2 rounded-lg bg-stone-50/80 sm:bg-transparent">
                   <BedDouble className="w-4 h-4 mx-auto text-stone-600" />
                   <div className="text-[11px] text-stone-500 font-medium">Kamar Tidur</div>
                   <div className="text-xs font-semibold text-stone-900">3 Queen Beds + 2 Sofa Beds</div>
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-1 p-2 rounded-lg bg-stone-50/80 sm:bg-transparent">
                   <Bath className="w-4 h-4 mx-auto text-stone-600" />
                   <div className="text-[11px] text-stone-500 font-medium">Kamar Mandi</div>
                   <div className="text-xs font-semibold text-stone-900">3 K. Mandi Air Hangat</div>
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-1 p-2 rounded-lg bg-stone-50/80 sm:bg-transparent">
                   <Users className="w-4 h-4 mx-auto text-stone-600" />
                   <div className="text-[11px] text-stone-500 font-medium">Kapasitas</div>
                   <div className="text-xs font-semibold text-stone-900">Hingga 8 Tamu</div>
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-1 p-2 rounded-lg bg-stone-50/80 sm:bg-transparent">
                   <Maximize className="w-4 h-4 mx-auto text-stone-600" />
                   <div className="text-[11px] text-stone-500 font-medium">Luas Properti</div>
                   <div className="text-xs font-semibold text-stone-900">260 m² (Seluruh Villa)</div>
@@ -189,7 +189,7 @@ export const VillaSuites: React.FC<VillaSuitesProps> = ({ lang, currency }) => {
                   </div>
 
                   {/* Interactive Date Picker for live price calculation */}
-                  <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                     <div>
                       <label className="text-[10px] uppercase text-stone-500 block mb-0.5">Check-In</label>
                       <div className="flex items-center gap-1 p-1.5 rounded border border-stone-200 bg-stone-50">
@@ -198,7 +198,7 @@ export const VillaSuites: React.FC<VillaSuitesProps> = ({ lang, currency }) => {
                           type="date"
                           value={checkIn}
                           onChange={(e) => setCheckIn(e.target.value)}
-                          className="bg-transparent text-xs text-stone-800 w-full focus:outline-none"
+                          className="bg-transparent text-xs text-stone-800 w-full focus:outline-none min-w-0"
                         />
                       </div>
                     </div>
@@ -211,14 +211,14 @@ export const VillaSuites: React.FC<VillaSuitesProps> = ({ lang, currency }) => {
                           min={checkIn}
                           value={checkOut}
                           onChange={(e) => setCheckOut(e.target.value)}
-                          className="bg-transparent text-xs text-stone-800 w-full focus:outline-none"
+                          className="bg-transparent text-xs text-stone-800 w-full focus:outline-none min-w-0"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Pricing Output */}
-                  <div className="pt-2 flex items-baseline justify-between">
+                  <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-baseline justify-between gap-2">
                     <div>
                       <span className="text-[10px] text-stone-500 block">Rata-rata per malam:</span>
                       <div className="text-xl font-bold font-serif-luxury text-stone-950">
@@ -228,7 +228,7 @@ export const VillaSuites: React.FC<VillaSuitesProps> = ({ lang, currency }) => {
                         <span className="text-xs font-normal text-stone-500 font-sans ml-1">/ malam</span>
                       </div>
                     </div>
-                    <div className="text-right">
+                    <div className="sm:text-right">
                       <span className="text-[10px] text-stone-500 block">Total ({livePrice.nights} malam):</span>
                       <div className="text-base font-bold text-emerald-700 font-mono">
                         {currency === 'IDR'

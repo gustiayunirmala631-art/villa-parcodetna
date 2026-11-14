@@ -64,37 +64,37 @@ export const Hero: React.FC<HeroProps> = ({ lang, currency }) => {
           </div>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif-luxury font-normal text-white tracking-wide text-balance leading-tight max-w-4xl mx-auto drop-shadow-md">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-serif-luxury font-normal text-white tracking-wide text-balance leading-tight max-w-4xl mx-auto drop-shadow-md">
           {lang === 'ID' 
             ? 'Kemewahan & Ketenteraman Tropis di Jogja' 
             : 'A Sanctuary of Luxury & Serenity in Yogyakarta'}
         </h1>
 
-        <p className="mt-4 text-sm sm:text-base text-stone-200/90 max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="mt-4 text-xs sm:text-base text-stone-200/90 max-w-2xl mx-auto font-light leading-relaxed">
           {lang === 'ID'
             ? 'Satu villa privat utuh eksklusif untuk rombongan Anda dengan kolam renang pribadi, 3 kamar tidur queen, dan ruang santai lega di Yogyakarta. Booking instan melalui Agoda atau hubungi WhatsApp kami.'
             : 'An exclusive entire 3-bedroom private pool villa in Yogyakarta for your family and friends. Book securely on Agoda or connect directly via WhatsApp.'}
         </p>
 
         {/* Trust markers */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs text-stone-300">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-stone-900/60 backdrop-blur-xs border border-white/10">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-stone-300">
+          <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded bg-stone-900/60 backdrop-blur-xs border border-white/10 text-[11px] sm:text-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-[#E8D7BE]" />
             Official Agoda Partner
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-stone-900/60 backdrop-blur-xs border border-white/10">
+          <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded bg-stone-900/60 backdrop-blur-xs border border-white/10 text-[11px] sm:text-xs">
             <span className="text-[#E8D7BE] font-bold">★ {VILLA_INFO.agodaScore} / 10</span>
-            Agoda Verified Score (Exceptional)
+            Agoda Score (Exceptional)
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-stone-900/60 backdrop-blur-xs border border-white/10">
+          <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded bg-stone-900/60 backdrop-blur-xs border border-white/10 text-[11px] sm:text-xs">
             <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-            WhatsApp Direct: {VILLA_INFO.phoneDisplay}
+            WA: {VILLA_INFO.phoneDisplay}
           </span>
         </div>
       </div>
 
       {/* Booking Search Bar overlay */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full mt-12 mb-4">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full mt-8 sm:mt-12 mb-4">
         <div className="bg-stone-900/85 backdrop-blur-md border border-white/15 rounded-xl p-4 sm:p-6 shadow-2xl text-white">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
             
@@ -125,15 +125,15 @@ export const Hero: React.FC<HeroProps> = ({ lang, currency }) => {
                     type="date"
                     value={checkIn}
                     onChange={(e) => setCheckIn(e.target.value)}
-                    className="bg-transparent border-none text-white text-xs sm:text-sm focus:outline-none w-1/2 p-0 cursor-pointer"
+                    className="bg-transparent border-none text-white text-xs sm:text-sm focus:outline-none w-1/2 p-0 cursor-pointer min-w-0"
                   />
-                  <span className="text-stone-500">-</span>
+                  <span className="text-stone-500 shrink-0">-</span>
                   <input
                     type="date"
                     value={checkOut}
                     min={checkIn}
                     onChange={(e) => setCheckOut(e.target.value)}
-                    className="bg-transparent border-none text-white text-xs sm:text-sm focus:outline-none w-1/2 p-0 cursor-pointer"
+                    className="bg-transparent border-none text-white text-xs sm:text-sm focus:outline-none w-1/2 p-0 cursor-pointer min-w-0"
                   />
                 </div>
               </div>
@@ -161,17 +161,17 @@ export const Hero: React.FC<HeroProps> = ({ lang, currency }) => {
             </div>
 
             {/* Field 4: Action Buttons (Agoda & WhatsApp) */}
-            <div className="flex flex-col sm:flex-row gap-2">
+            <div className="flex flex-row gap-2 pt-1 sm:pt-0">
               {/* Primary Agoda Direct Booking */}
               <a
                 href={agodaDateUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 px-4 rounded-md bg-[#E8D7BE] hover:bg-[#F5E6D0] text-stone-950 font-semibold text-xs tracking-wider uppercase transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-1.5 text-center group"
+                className="flex-1 py-3 px-3 sm:px-4 rounded-md bg-[#E8D7BE] hover:bg-[#F5E6D0] text-stone-950 font-semibold text-xs tracking-wider uppercase transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-1.5 text-center group whitespace-nowrap"
               >
-                <Search className="w-3.5 h-3.5" />
+                <Search className="w-3.5 h-3.5 shrink-0" />
                 <span>{lang === 'ID' ? 'Cek Agoda' : 'Agoda Rates'}</span>
-                <ExternalLink className="w-3 h-3 text-stone-700 group-hover:translate-x-0.5 transition-transform" />
+                <ExternalLink className="w-3 h-3 text-stone-700 group-hover:translate-x-0.5 transition-transform shrink-0" />
               </a>
 
               {/* Quick WhatsApp Inquiry */}
@@ -179,36 +179,36 @@ export const Hero: React.FC<HeroProps> = ({ lang, currency }) => {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-3.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-1.5 text-center"
+                className="py-3 px-3.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-1.5 text-center shrink-0"
                 title="Kirim detail pencarian ini langsung ke WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span className="hidden sm:inline">WA</span>
+                <span>WA</span>
               </a>
             </div>
 
           </div>
 
           {/* Real-time Agoda Price Sync Bar */}
-          <div className="mt-4 pt-3 border-t border-stone-800/80 flex flex-wrap items-center justify-between text-xs text-stone-300 gap-2">
-            <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
-              <span className="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-medium bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/60">
+          <div className="mt-4 pt-3 border-t border-stone-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-stone-300 gap-2">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+              <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-emerald-400 font-medium bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/60">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Sinkronisasi Harga Agoda Real-time
+                Sinkron Real-time
               </span>
               <span className="font-semibold text-white">
                 {currency === 'IDR'
                   ? `Rp ${livePrice.avgRatePerNightIdr.toLocaleString('id-ID')} / malam`
                   : `$${livePrice.avgRatePerNightUsd} / night`}
               </span>
-              <span className="text-stone-400">
+              <span className="text-stone-400 text-[11px] sm:text-xs">
                 (Total {livePrice.nights} malam: {currency === 'IDR' ? `Rp ${livePrice.totalStayIdr.toLocaleString('id-ID')}` : `$${livePrice.totalStayUsd}`})
               </span>
             </div>
 
             <button
               onClick={handleSyncPrice}
-              className="text-[#E8D7BE] hover:text-white flex items-center gap-1 text-[11px] tracking-wide uppercase transition-colors"
+              className="text-[#E8D7BE] hover:text-white flex items-center gap-1 text-[11px] tracking-wide uppercase transition-colors self-end sm:self-auto"
               title="Perbarui data sinkronisasi harga"
             >
               <RefreshCw className={`w-3 h-3 ${isSyncing ? 'animate-spin' : ''}`} />

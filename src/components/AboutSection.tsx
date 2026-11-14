@@ -14,7 +14,7 @@ export const AboutSection: React.FC<AboutProps> = ({ lang }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Visual Composition with 2 Real Agoda Images */}
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-6 relative mb-6 lg:mb-0">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-4/3">
               <ImageWithFallback
                 src={AGODA_PHOTOS.swimmingPool}
@@ -36,13 +36,13 @@ export const AboutSection: React.FC<AboutProps> = ({ lang }) => {
               />
             </div>
 
-            {/* Badge pill-free overlay */}
-            <div className="absolute top-4 left-4 bg-stone-900/85 backdrop-blur-md text-white p-3.5 rounded-lg border border-white/10 text-xs">
+            {/* Badge overlay */}
+            <div className="absolute top-4 left-4 bg-stone-900/85 backdrop-blur-md text-white p-2.5 sm:p-3.5 rounded-lg border border-white/10 text-xs">
               <div className="flex items-center gap-1.5 text-[#E8D7BE]">
-                <MapPin className="w-3.5 h-3.5" />
-                <span className="font-semibold tracking-wider uppercase text-[11px]">Sleman, Yogyakarta</span>
+                <MapPin className="w-3.5 h-3.5 shrink-0" />
+                <span className="font-semibold tracking-wider uppercase text-[10px] sm:text-[11px]">Sleman, Yogyakarta</span>
               </div>
-              <p className="text-stone-300 text-[11px] mt-0.5">Suasana Sejuk Dekat Lereng Merapi</p>
+              <p className="text-stone-300 text-[10px] sm:text-[11px] mt-0.5">Suasana Sejuk Dekat Lereng Merapi</p>
             </div>
           </div>
 
@@ -116,15 +116,15 @@ export const AboutSection: React.FC<AboutProps> = ({ lang }) => {
               </div>
             </div>
 
-            <div className="pt-4 flex items-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <a
                 href="#reservation"
-                className="px-6 py-3 rounded-lg bg-stone-900 text-white hover:bg-stone-800 text-xs tracking-wider uppercase font-medium transition-colors shadow"
+                className="w-full sm:w-auto text-center px-6 py-3 rounded-lg bg-stone-900 text-white hover:bg-stone-800 text-xs tracking-wider uppercase font-medium transition-colors shadow"
               >
                 {lang === 'ID' ? 'Rencanakan Kunjungan' : 'Plan Your Stay'}
               </a>
               <div className="flex items-center gap-2 text-stone-600 text-xs">
-                <HeartHandshake className="w-4 h-4 text-[#A68352]" />
+                <HeartHandshake className="w-4 h-4 text-[#A68352] shrink-0" />
                 <span>Pelayanan Penuh Kehangatan Khas Jogja</span>
               </div>
             </div>

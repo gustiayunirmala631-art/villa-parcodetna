@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, setCurrency, lang, set
             href="#hero"
             className="flex items-center gap-2 group whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C2A374]"
           >
-            <span className="font-serif-luxury text-xl sm:text-2xl tracking-[0.2em] font-normal uppercase text-white group-hover:text-[#E8D7BE] transition-colors">
+            <span className="font-serif-luxury text-lg sm:text-2xl tracking-[0.15em] sm:tracking-[0.2em] font-normal uppercase text-white group-hover:text-[#E8D7BE] transition-colors">
               Villa Parcodetna
             </span>
           </a>
@@ -64,8 +64,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, setCurrency, lang, set
             ))}
           </nav>
 
-          {/* Zone 3: Primary Action & Controls */}
-          <div className="hidden sm:flex items-center gap-4 shrink-0">
+          {/* Zone 3: Desktop Primary Action & Controls */}
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             {/* Currency & Language Toggles */}
             <div className="flex items-center gap-2 text-xs tracking-wider border-r border-stone-700/60 pr-4">
               <button
@@ -110,20 +110,41 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, setCurrency, lang, set
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex sm:hidden items-center gap-2">
+          {/* Mobile & Tablet Controls & Hamburger */}
+          <div className="flex lg:hidden items-center gap-2 sm:gap-3">
+            {/* Tablet quick action */}
+            <div className="hidden sm:flex items-center gap-2 text-xs border-r border-stone-700/60 pr-3">
+              <button
+                onClick={() => setCurrency(currency === 'IDR' ? 'USD' : 'IDR')}
+                className="px-2 py-1 rounded bg-stone-800 text-stone-200 font-mono text-[11px]"
+                title="Ganti Mata Uang"
+              >
+                {currency}
+              </button>
+              <button
+                onClick={() => setLang(lang === 'ID' ? 'EN' : 'ID')}
+                className="px-2 py-1 rounded bg-stone-800 text-stone-200 uppercase text-[11px]"
+                title="Ganti Bahasa"
+              >
+                {lang}
+              </button>
+            </div>
+
             <a
               href={VILLA_INFO.agodaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 text-[11px] font-semibold text-stone-900 bg-[#E8D7BE] rounded"
+              className="px-3 py-1.5 text-xs font-semibold text-stone-900 bg-[#E8D7BE] hover:bg-[#F3E5CE] rounded flex items-center gap-1 shadow-sm shrink-0"
             >
-              Agoda
+              <span>Agoda</span>
+              <ExternalLink className="w-3 h-3" />
             </a>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded text-stone-200 hover:text-white hover:bg-stone-800 focus:outline-none"
-              aria-label="Toggle menu"
+              className="p-2 rounded text-stone-200 hover:text-white hover:bg-stone-800/80 focus:outline-none focus:ring-2 focus:ring-[#C2A374]/60"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

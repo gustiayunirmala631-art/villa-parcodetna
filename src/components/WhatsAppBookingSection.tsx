@@ -73,7 +73,7 @@ export const WhatsAppBookingSection: React.FC<WhatsAppProps> = ({ lang, currency
             <form onSubmit={handleSubmit} className="space-y-5">
               
               {/* Unit Info Box (Single Option) */}
-              <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-[#A68352] font-bold block">
                     Pilihan Unit Villa
@@ -85,7 +85,7 @@ export const WhatsAppBookingSection: React.FC<WhatsAppProps> = ({ lang, currency
                     Satu Villa Utuh · 3 Kamar Tidur · Kolam Renang Privat (Max 8 Tamu)
                   </div>
                 </div>
-                <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 shrink-0">
+                <span className="self-start sm:self-auto text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 shrink-0">
                   100% Privat
                 </span>
               </div>
@@ -195,11 +195,11 @@ export const WhatsAppBookingSection: React.FC<WhatsAppProps> = ({ lang, currency
               {/* Submit CTA Button */}
               <button
                 type="submit"
-                className="w-full py-4 px-6 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-semibold text-xs tracking-wider uppercase transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                className="w-full py-3.5 sm:py-4 px-4 sm:px-6 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-semibold text-xs tracking-wider uppercase transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-5 h-5" />
-                <span>Kirim Format Reservasi ke WhatsApp ({VILLA_INFO.phoneDisplay})</span>
-                <Send className="w-4 h-4 ml-1" />
+                <MessageCircle className="w-5 h-5 shrink-0" />
+                <span className="truncate">Kirim Reservasi ke WhatsApp <span className="hidden sm:inline">({VILLA_INFO.phoneDisplay})</span></span>
+                <Send className="w-4 h-4 ml-1 shrink-0" />
               </button>
 
             </form>

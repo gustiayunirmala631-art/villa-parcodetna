@@ -40,7 +40,7 @@ export const GoogleMapsSection: React.FC<MapsProps> = ({ lang }) => {
           
           {/* Left Column: Interactive Google Map */}
           <div className="lg:col-span-7 bg-white rounded-2xl border border-stone-200/90 shadow-sm overflow-hidden p-3 sm:p-4">
-            <div className="relative w-full h-[400px] sm:h-[480px] rounded-xl overflow-hidden border border-stone-200 bg-stone-100">
+            <div className="relative w-full h-[280px] sm:h-[380px] lg:h-[480px] rounded-xl overflow-hidden border border-stone-200 bg-stone-100">
               {/* Google Maps Embed iframe */}
               <iframe
                 title="Google Maps Lokasi Villa Parcodetna Yogyakarta"
@@ -55,19 +55,19 @@ export const GoogleMapsSection: React.FC<MapsProps> = ({ lang }) => {
               />
               
               {/* Map floating control overlay */}
-              <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs p-2.5 rounded-lg border border-stone-200 shadow-md flex items-center gap-2 text-xs">
+              <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs p-2 sm:p-2.5 rounded-lg border border-stone-200 shadow-md flex items-center gap-2 text-xs">
                 <MapPin className="w-4 h-4 text-[#A68352]" />
                 <div>
-                  <div className="font-semibold text-stone-900">Villa Parcodetna</div>
+                  <div className="font-semibold text-stone-900 text-xs sm:text-sm">Villa Parcodetna</div>
                   <div className="text-[10px] text-stone-500">Yogyakarta, Indonesia</div>
                 </div>
               </div>
             </div>
 
             {/* Bottom map action bar */}
-            <div className="mt-3 flex flex-wrap items-center justify-between gap-3 p-2 text-xs">
-              <span className="text-stone-500 flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-[#A68352]" />
+            <div className="mt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-1 sm:p-2 text-xs">
+              <span className="text-stone-500 flex items-center gap-1 text-[11px] sm:text-xs">
+                <Sparkles className="w-3.5 h-3.5 text-[#A68352] shrink-0" />
                 Peta interaktif dapat digeser & dizoom
               </span>
 
@@ -75,7 +75,7 @@ export const GoogleMapsSection: React.FC<MapsProps> = ({ lang }) => {
                 href={VILLA_INFO.googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2 px-4 rounded-lg bg-stone-900 text-white hover:bg-stone-800 text-xs font-medium flex items-center gap-1.5 transition-colors shadow-sm"
+                className="w-full sm:w-auto py-2.5 px-4 rounded-lg bg-stone-900 text-white hover:bg-stone-800 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors shadow-sm"
               >
                 <Navigation className="w-3.5 h-3.5 text-[#E8D7BE]" />
                 <span>Buka Petunjuk Arah Google Maps</span>

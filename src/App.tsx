@@ -18,7 +18,7 @@ export default function App() {
   const [lang, setLang] = useState<'ID' | 'EN'>('ID');
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-stone-900 font-sans selection:bg-[#C2A374] selection:text-white">
+    <div className="min-h-screen bg-[#FDFBF7] text-stone-900 font-sans selection:bg-[#C2A374] selection:text-white overflow-x-hidden w-full">
       {/* Strict 3-Zone Navigation */}
       <Navbar
         currency={currency}

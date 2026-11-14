@@ -22,11 +22,11 @@ export const FloatingWhatsApp: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40">
       
       {/* Concierge Popover Window */}
       {isOpen && (
-        <div className="mb-3 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-stone-200 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <div className="mb-3 w-[calc(100vw-2rem)] sm:w-96 max-w-sm bg-white rounded-2xl shadow-2xl border border-stone-200 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
           
           {/* Header */}
           <div className="bg-stone-900 text-white p-4 flex items-center justify-between">
@@ -131,18 +131,18 @@ export const FloatingWhatsApp: React.FC = () => {
       {/* Floating Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative group p-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-emerald-300"
+        className="relative group p-3.5 sm:p-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-emerald-300"
         aria-label="Buka WhatsApp Concierge Villa Parcodetna"
       >
         {isOpen ? (
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5 sm:w-6 sm:h-6" />
         ) : (
           <>
-            <MessageCircle className="w-6 h-6" />
+            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
             {/* Green Notification Dot */}
-            <span className="absolute top-1 right-1 flex h-3 w-3">
+            <span className="absolute top-1 right-1 flex h-2.5 w-2.5 sm:h-3 sm:w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-white" />
             </span>
           </>
         )}

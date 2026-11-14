@@ -66,12 +66,12 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ lang }) => {
         </div>
 
         {/* Filter Tabs (Interactive Segmented Control Buttons) */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 p-1 bg-stone-200/70 rounded-xl max-w-2xl mx-auto mb-10">
+        <div className="flex overflow-x-auto pb-2 sm:pb-1 sm:flex-wrap items-center sm:justify-center gap-1.5 p-1 bg-stone-200/70 rounded-xl max-w-3xl mx-auto mb-10 no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 text-xs font-medium rounded-lg transition-all ${
+              className={`px-3.5 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap shrink-0 ${
                 activeCategory === cat.id
                   ? 'bg-stone-900 text-white shadow-sm'
                   : 'text-stone-700 hover:text-stone-950 hover:bg-white/60'
@@ -83,7 +83,7 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ lang }) => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredItems.map((item, idx) => (
             <div
               key={item.id}
@@ -98,18 +98,18 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ lang }) => {
                 wrapperClassName="w-full h-full"
               />
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+              {/* Responsive Overlay (Always visible with subtle gradient on mobile, full hover on desktop) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-5 text-white">
                 <span className="text-[10px] tracking-widest uppercase text-[#E8D7BE] font-medium">
                   {item.categoryLabel}
                 </span>
-                <h4 className="text-base font-serif-luxury text-white mt-1">
+                <h4 className="text-sm sm:text-base font-serif-luxury text-white mt-1">
                   {item.title}
                 </h4>
-                <p className="text-xs text-stone-300 line-clamp-2 mt-1 font-light">
+                <p className="text-xs text-stone-300 line-clamp-2 mt-1 font-light hidden sm:block">
                   {item.caption}
                 </p>
-                <div className="mt-3 flex items-center gap-1 text-[11px] text-[#E8D7BE]">
+                <div className="mt-2 sm:mt-3 flex items-center gap-1 text-[11px] text-[#E8D7BE]">
                   <Maximize2 className="w-3.5 h-3.5" />
                   <span>Perbesar Foto</span>
                 </div>
@@ -122,15 +122,15 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ lang }) => {
 
       {/* Fullscreen Lightbox Modal */}
       {currentLightboxItem && lightboxIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-md flex flex-col justify-between p-4 sm:p-8 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-md flex flex-col justify-between p-3 sm:p-8 animate-in fade-in duration-200">
           
           {/* Lightbox Top Bar */}
-          <div className="flex items-center justify-between text-white border-b border-stone-800 pb-4 max-w-6xl mx-auto w-full">
+          <div className="flex items-center justify-between text-white border-b border-stone-800 pb-3 max-w-6xl mx-auto w-full">
             <div>
               <span className="text-[10px] uppercase tracking-widest text-[#E8D7BE] block">
                 {currentLightboxItem.categoryLabel} · Foto {lightboxIndex + 1} dari {filteredItems.length}
               </span>
-              <h3 className="text-lg sm:text-xl font-serif-luxury text-white">
+              <h3 className="text-base sm:text-xl font-serif-luxury text-white truncate max-w-xs sm:max-w-md">
                 {currentLightboxItem.title}
               </h3>
             </div>
@@ -139,12 +139,12 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ lang }) => {
               className="p-2 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors"
               aria-label="Tutup Galeri"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Lightbox Center Image & Controls */}
-          <div className="relative flex items-center justify-center flex-1 my-4 max-w-5xl mx-auto w-full">
+          <div className="relative flex items-center justify-center flex-1 my-2 sm:my-4 max-w-5xl mx-auto w-full">
             {/* Prev Button */}
             <button
               onClick={() =>
@@ -152,18 +152,18 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ lang }) => {
                   prev !== null && prev > 0 ? prev - 1 : filteredItems.length - 1
                 )
               }
-              className="absolute left-2 sm:left-4 z-10 p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-white border border-stone-700/60 transition-colors shadow-lg"
+              className="absolute left-1 sm:left-4 z-10 p-2 sm:p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-white border border-stone-700/60 transition-colors shadow-lg"
               aria-label="Foto Sebelumnya"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Main Lightbox Image */}
-            <div className="max-h-[70vh] max-w-full rounded-xl overflow-hidden shadow-2xl border border-stone-800">
+            <div className="max-h-[65vh] sm:max-h-[70vh] max-w-full rounded-xl overflow-hidden shadow-2xl border border-stone-800 flex items-center justify-center">
               <img
                 src={currentLightboxItem.imageUrl}
                 alt={currentLightboxItem.title}
-                className="max-h-[70vh] w-auto max-w-full object-contain"
+                className="max-h-[65vh] sm:max-h-[70vh] w-auto max-w-full object-contain"
               />
             </div>
 
@@ -174,18 +174,18 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ lang }) => {
                   prev !== null && prev < filteredItems.length - 1 ? prev + 1 : 0
                 )
               }
-              className="absolute right-2 sm:right-4 z-10 p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-white border border-stone-700/60 transition-colors shadow-lg"
+              className="absolute right-1 sm:right-4 z-10 p-2 sm:p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-white border border-stone-700/60 transition-colors shadow-lg"
               aria-label="Foto Berikutnya"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Lightbox Footer Caption */}
-          <div className="max-w-2xl mx-auto text-center text-xs sm:text-sm text-stone-300 font-light border-t border-stone-800/80 pt-3">
-            <p>{currentLightboxItem.caption}</p>
-            <div className="mt-2 text-[10px] text-stone-500">
-              Gunakan tombol panah keyboard ← → untuk navigasi, ESC untuk keluar
+          <div className="max-w-2xl mx-auto text-center text-xs sm:text-sm text-stone-300 font-light border-t border-stone-800/80 pt-2 sm:pt-3">
+            <p className="line-clamp-2 sm:line-clamp-none">{currentLightboxItem.caption}</p>
+            <div className="mt-1 text-[10px] text-stone-500">
+              Ketuk panah untuk navigasi foto
             </div>
           </div>
 
