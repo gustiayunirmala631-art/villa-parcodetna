@@ -23,9 +23,9 @@ export const VILLA_INFO = {
   rating: 4.9,
   agodaScore: 9.7, // Skor resmi Agoda
   totalReviews: 248,
-  // Base rates synchronized with Agoda
-  baseRateIdr: 2850000,
-  baseRateUsd: 185,
+  // Base rates synchronized with Agoda (Weekday rate: Rp 1.350.000)
+  baseRateIdr: 1350000,
+  baseRateUsd: 88,
   weekendMultiplier: 1.15, // Penyesuaian akhir pekan sesuai Agoda
 };
 
